@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/01_DrumKit_Vanilla_JS" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/02_Clock_Vanilla_JS" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/03_CSS_variables_with_JS" vcs="Git" />
+  </component>
+</project>
