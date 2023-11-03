@@ -6,3 +6,9 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+../.idea
+./misc.xml
+./modules.xml
+./vcs.xml
+./workspace.xml
+./JavaScript_30days_challenge.iml
