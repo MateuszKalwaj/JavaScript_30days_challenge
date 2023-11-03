@@ -80,18 +80,33 @@
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
-    const nameSorted = inventors.sort(function (a, b) {
-        if (a.last < b.last) {
-            return -1;
-        }
-    });
+    //1.Solution:
+    // const nameSorted = people.sort(function (a, b) {
+    //     if (a.last < b.last) {
+    //         return -1;
+    //     }
+    // });
+    // console.log("Sorted by last name alphabetically:")
+    // console.table(nameSorted);
+    //2.Solution:
     console.log("Sorted by last name alphabetically:")
-    console.table(nameSorted);
+    const lastSorted = people.sort(function (lastOne, nextOne) {
+       const [aLast, aFirst] = lastOne.split(',');
+        const [bLast, bFirst] = nextOne.split(',');
+        return aLast > bLast ? 1 : -1;
+    });
+    console.table(lastSorted)
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
 
+    const countedNames = Object.create(null);
+    for (const name of data) {
+        const currentCount = countedNames[name] ?? 0;
+        countedNames[name] = currentCount +1;
+    }
+    console.table(countedNames)
 </script>
 </body>
 </html>
