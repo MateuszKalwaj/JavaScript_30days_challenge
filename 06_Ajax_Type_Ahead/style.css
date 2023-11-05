@@ -68,6 +68,9 @@ input.search {
 span.population {
     font-size: 15px;
 }
+span.growth {
+    font-size: 12px;
+}
 
 .hl {
     background: #ffc600;
