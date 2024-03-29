@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+</head>
+<body>
+    <h1 id="time">00:00</h1>
+    <button onclick="startTime()">Start</button>
+    <button onclick="stopTime()">Stop</button>
+    <button onclick="resetTime()">Reset</button>
+
+    <script>
+        let secondsElapsed = 0;
+        let interval = null;
+        const time = document.getElementById("time");
+  
+        function timer() {
+          secondsElapsed++;
+          setTime();
+        }
+  
+        function startTime() {
+          if (interval === null) {
+            interval = setInterval(timer, 1000);
+          }
+      }
+      
+      function stopTime() {
+        clearInterval(interval);
+        interval = null;
+      }
+  
+      function resetTime() {
+        stopTime();
+        secondsElapsed = 0;
+        setTime();
+      }
+  
+      function setTime() {
+        const minutes = Math.floor(secondsElapsed / 60);
+        const seconds = secondsElapsed % 60;
+        time.innerHTML = `${padStart(minutes)}:${padStart(seconds)}`;
+      }
+  
+      function padStart(str) {
+        return String(str).padStart(2, "0");
+      }
+    </script>
+</body>
+</html>

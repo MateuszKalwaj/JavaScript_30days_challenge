@@ -6,6 +6,7 @@
     <link rel="icon" href="https://fav.farm/🔥" />
 </head>
 <body>
+
 <style>
 
     html {
@@ -101,31 +102,21 @@ When a user clicks a checkbox, holds Shift, and then clicks another checkbox a f
     let lastChecked;
 
     function handleShiftCheck(event) {
-        /*  Event and Condition Check: if the Shift key is pressed (event.shiftKey)
-        and if the current checkbox (this) is checked.*/
+
         if (event.shiftKey && this.checked) {
-            /*  Initialization: it is used to determine if the current checkbox is within the range between checkboxes*/
             let inRange = false;
-            /*  Iteration Over Checkboxes*/
             checkboxes.forEach(checkbox => {
-            /*  Checking Range: This checks if the current checkbox (checkbox)
-                is the same as the one being clicked (this) or the last checked checkbox (lastChecked).
-                If so, it toggles the inRange variable*/
                 if (checkbox === this || checkbox === lastChecked) {
                     inRange = !inRange;
                 }
-            /*  Checking and Updating "State": If the checkbox is within the range (inRange is true),
-                it sets the checked property of the checkbox to true.*/
                 if (inRange) {
                     checkbox.checked = true;
                 }
             });
         }
-        /*  Updating lastChecked: regardless of whether the Shift key is pressed or not,
-            it updates lastChecked to the current checkbox.
-            This is crucial for the next invocation of this function to know where the range starts. */
         lastChecked = this;
     }
+
 
     checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleShiftCheck));
 

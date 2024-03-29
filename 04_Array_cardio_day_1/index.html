@@ -37,14 +37,14 @@
     ];
 
     // Array.prototype.filter()
-    // 1. Filter the list of inventors for those who were born in the 1500's
-    // function isBornIn1500s(inventor) {
-    //     return inventor.year >=1500 && inventor.year <=1600;
-    // }
-    // const filteredResults = inventors.filter(isBornIn1500s)
-    // console.table(filteredResults)
-    const filteredResults = inventors.filter(inventor => (inventor.year >= 1500 && inventor.year <=1600));
-    console.table(filteredResults);
+    // 1. Filter the list of inventors for those who were born in the 1500's |
+    function isBornIn1500s(inventor) {
+        return inventor.year >=1500 && inventor.year <=1600;
+    }
+    const filteredResults = inventors.filter(isBornIn1500s)
+    console.table(filteredResults)
+    // const filteredResults = inventors.filter(inventor => (inventor.year >= 1500 && inventor.year <=1600));
+    // console.table(filteredResults);
 
     // Array.prototype.map()
     // 2. Give us an array of the inventors first and last names
@@ -61,7 +61,7 @@
     const reducedResults = inventors.reduce((total, inventor) => {
         return total + (inventor.passed - inventor.year);
     }, 0);
-    console.log(reducedResults);
+    console.table(reducedResults);
 
     // 5. Sort the inventors by years lived
     const oldest = inventors.sort(function (a, b) {
@@ -80,7 +80,7 @@
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
-    //1.Solution:
+    // 1.Solution:
     // const nameSorted = people.sort(function (a, b) {
     //     if (a.last < b.last) {
     //         return -1;
@@ -88,6 +88,7 @@
     // });
     // console.log("Sorted by last name alphabetically:")
     // console.table(nameSorted);
+
     //2.Solution:
     console.log("Sorted by last name alphabetically:")
     const lastSorted = people.sort(function (lastOne, nextOne) {
